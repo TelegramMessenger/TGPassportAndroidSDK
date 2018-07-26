@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="PassportSDK_Cancel">Batal</string>
+	<string name="PassportSDK_OpenGooglePlay">Buka Google Play</string>
+	<string name="PassportSDK_DownloadTelegram">Anda membutuhkan Telegram untuk masuk ke %s. Apakah Anda ingin memasangnya sekarang?</string>
+	<string name="PassportSDK_LogInWithTelegram">Masuk dengan Telegram</string>
+	<string name="PassportSDK_TelegramPassport">Paspor Telegram</string>
+</resources>

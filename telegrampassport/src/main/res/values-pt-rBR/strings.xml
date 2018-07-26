@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="PassportSDK_LogInWithTelegram">Entrar com Telegram</string>
+	<string name="PassportSDK_TelegramPassport">Telegram Passport</string>
+	<string name="PassportSDK_DownloadTelegram">Você precisa do Telegram para entrar em **%s**. Gostaria de instalar agora?</string>
+	<string name="PassportSDK_OpenGooglePlay">Abrir Google Play</string>
+	<string name="PassportSDK_Cancel">Cancelar</string>
+</resources>

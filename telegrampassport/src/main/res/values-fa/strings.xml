@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="PassportSDK_Cancel">لغو</string>
+	<string name="PassportSDK_OpenGooglePlay">باز کردن Google Play</string>
+	<string name="PassportSDK_DownloadTelegram">شما جهت ورود به حساب کاربری خود در **%s** به تلگرام احتیاج دارید. آیا تمایل دارید آن را الان نصب کنید؟</string>
+	<string name="PassportSDK_LogInWithTelegram">ورود با حساب کاربری تلگرام</string>
+	<string name="PassportSDK_TelegramPassport">گذرنامه تلگرامی</string>
+</resources>

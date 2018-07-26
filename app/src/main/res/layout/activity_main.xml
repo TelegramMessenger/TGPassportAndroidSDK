@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="16dip">
+
+		<TextView
+			android:id="@+id/scope_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dip"
+			android:textSize="12dip"
+			android:textColor="#888"
+			android:text="Scope"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:baselineAligned="false">
+			<LinearLayout
+				android:id="@+id/scope1"
+				android:layout_width="0dip"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<CheckBox
+					android:id="@+id/scope_personal_details"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:text="personal_details"/>
+
+				<CheckBox
+					android:id="@+id/scope_passport"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:text="passport"/>
+
+				<CheckBox
+					android:id="@+id/scope_driver_license"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:text="driver_license"/>
+
+				<CheckBox
+					android:id="@+id/scope_identity_card"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:text="identity_card"/>
+
+				<CheckBox
+					android:id="@+id/scope_id_document"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:checked="true"
+					android:text="id_document"/>
+
+				<CheckBox
+					android:id="@+id/scope_id_selfie"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:checked="true"
+					android:text="id_selfie"/>
+
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/scope2"
+				android:layout_width="0dip"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<CheckBox
+					android:id="@+id/scope_address"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:text="address"/>
+
+				<CheckBox
+					android:id="@+id/scope_utility_bill"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:text="utility_bill"/>
+
+				<CheckBox
+					android:id="@+id/scope_bank_statement"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:text="bank_statement"/>
+
+				<CheckBox
+					android:id="@+id/scope_rental_agreement"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:text="rental_agreement"/>
+
+				<CheckBox
+					android:id="@+id/scope_address_document"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:checked="true"
+					android:text="address_document"/>
+
+				<CheckBox
+					android:id="@+id/scope_phone"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:checked="true"
+					android:text="phone_number"/>
+
+				<CheckBox
+					android:id="@+id/scope_email"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:checked="true"
+					android:text="email"/>
+
+			</LinearLayout>
+		</LinearLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:id="@+id/button_style_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dip"
+				android:layout_marginBottom="8dip"
+				android:textSize="12dip"
+				android:textColor="#888"
+				android:text="@string/button_style"/>
+
+			<ImageView
+				android:id="@+id/straight_corner_icon"
+				android:layout_width="16dip"
+				android:layout_height="16dip"
+				android:layout_below="@+id/button_style_title"
+				android:layout_marginTop="8dip"
+				android:layout_alignParentLeft="true"
+				android:src="@drawable/ic_corner_straight"/>
+			<ImageView
+				android:id="@+id/round_corner_icon"
+				android:layout_width="16dip"
+				android:layout_height="16dip"
+				android:layout_below="@+id/button_style_title"
+				android:layout_marginTop="8dip"
+				android:layout_alignParentRight="true"
+				android:src="@drawable/ic_corner_round"/>
+
+			<android.support.v7.widget.AppCompatSeekBar
+				android:id="@+id/corner_roundness_slider"
+				android:layout_width="match_parent"
+				android:layout_height="32dip"
+				android:layout_toRightOf="@+id/straight_corner_icon"
+				android:layout_toLeftOf="@+id/round_corner_icon"
+				android:layout_marginLeft="8dip"
+				android:layout_marginRight="8dip"
+				android:layout_below="@+id/button_style_title"
+				android:max="1000"
+				android:progress="300"/>
+		</RelativeLayout>
+
+		<org.telegram.passport.TelegramLoginButton
+			android:id="@+id/login_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="18dip"
+			android:layout_marginBottom="16dip"/>
+
+	</LinearLayout>
+
+</ScrollView>

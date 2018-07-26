@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="PassportSDK_Cancel">Annuleren</string>
+	<string name="PassportSDK_OpenGooglePlay">Google Play openen</string>
+	<string name="PassportSDK_DownloadTelegram">Je hebt Telegram nodig om in te loggen op **%s**, nu installeren?</string>
+	<string name="PassportSDK_LogInWithTelegram">Inloggen met Telegram</string>
+	<string name="PassportSDK_TelegramPassport">Telegram Passport</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="TelegramLoginButton">
+		<!-- The roundness of the button corners. See {@link org.telegram.passport.TelegramLoginButton#setCornerRoundness}. -->
+		<attr name="cornerRoundness" format="float"/>
+	</declare-styleable>
+</resources>

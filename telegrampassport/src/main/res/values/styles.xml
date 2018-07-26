@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- Local copy of android:Theme.Holo.Dialog.Alert -->
+	<style name="Telegram_Theme_Holo_Dialog_Alert" parent="@android:style/Theme.Holo.Light.Dialog">
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:windowTitleStyle">@style/Telegram_DialogWindowTitle_Holo</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+		<item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+	</style>
+
+	<!-- Local copy of android:DialogWindowTitle.Holo -->
+	<style name="Telegram_DialogWindowTitle_Holo">
+		<item name="android:maxLines">1</item>
+		<item name="android:scrollHorizontally">true</item>
+		<item name="android:textAppearance">@android:style/TextAppearance.Holo.DialogWindowTitle</item>
+	</style>
+
+	<style name="Theme_Telegram_Alert" parent="Telegram_Theme_Holo_Dialog_Alert">
+	</style>
+
+</resources>

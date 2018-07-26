@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="PassportSDK_Cancel">Скасувати</string>
+	<string name="PassportSDK_OpenGooglePlay">Відкрити Google Play</string>
+	<string name="PassportSDK_DownloadTelegram">Вам потрібен Telegram щоб увійти до **%s**. Бажаєте встановити його зараз?</string>
+	<string name="PassportSDK_LogInWithTelegram">Увійти через Telegram</string>
+	<string name="PassportSDK_TelegramPassport">Telegram Passport</string>
+</resources>

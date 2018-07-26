@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">Telegram Passport Example</string>
+	<string name="error">Error</string>
+	<string name="ok">OK</string>
+	<string name="login_canceled">Login canceled</string>
+	<string name="button_style">Button Style</string>
+	<string name="login_successful">Logged in successfully</string>
+</resources>

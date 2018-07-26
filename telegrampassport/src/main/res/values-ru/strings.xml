@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="PassportSDK_Cancel">Отмена</string>
+	<string name="PassportSDK_OpenGooglePlay">Открыть Google Play</string>
+	<string name="PassportSDK_DownloadTelegram">Чтобы авторизоваться в **%s**, требуется Telegram. Хотите установить его сейчас?</string>
+	<string name="PassportSDK_LogInWithTelegram">Войти через Telegram</string>
+	<string name="PassportSDK_TelegramPassport">Telegram Passport</string>
+</resources>
