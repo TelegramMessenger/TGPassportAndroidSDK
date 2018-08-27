@@ -85,7 +85,10 @@ public class TelegramLoginButton extends Button{
 				a.recycle();
 			}
 		}
-		setCompoundDrawablesWithIntrinsicBounds(R.drawable.telegram_logo, 0, 0, 0);
+		if(Build.VERSION.SDK_INT>=17)
+			setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.telegram_logo, 0, 0, 0);
+		else
+			setCompoundDrawablesWithIntrinsicBounds(R.drawable.telegram_logo, 0, 0, 0);
 		setCompoundDrawablePadding(Math.round(16*dp));
 	}
 

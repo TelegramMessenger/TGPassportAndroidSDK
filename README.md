@@ -51,9 +51,19 @@ public void onClick(View view){
     TelegramPassport.AuthRequest req=new TelegramPassport.AuthRequest();
     req.botID=/* your bot ID here */;
     req.publicKey=/* your bot public key here */;
-    req.payload=/* a payload to pass to the bot server */;
-    // you can also use strings like "id_selfie" here
-    req.scope=Arrays.asList(TelegramPassport.SCOPE_IDENTITY_DOCUMENT, TelegramPassport.SCOPE_ADDRESS_DOCUMENT, TelegramPassport.SCOPE_PHONE_NUMBER);
+    req.nonce=/* a unique payload to pass to the bot server */;
+    // Request either a passport or an ID card with selfie, a driver license, personal details with
+    // name as it appears in the documents, address with any address document, and a phone number.
+    // You could also pass a raw JSON object here if that's what works better for you
+    // (for example, if you already get it from your server in the correct format).
+    req.scope=new PassportScope(
+        new PassportScopeElementOneOfSeveral(PassportScope.PASSPORT, PassportScope.IDENTITY_CARD).withSelfie(),
+        new PassportScopeElementOne(PassportScope.PERSONAL_DETAILS).withNativeNames(),
+        PassportScope.DRIVER_LICENSE,
+        PassportScope.ADDRESS,
+        PassportScope.ADDRESS_DOCUMENT,
+        PassportScope.PHONE_NUMBER
+    );
     TelegramPassport.request(MyActivity.this, req, TG_PASSPORT_RESULT);
 }});
 ```

@@ -13,186 +13,310 @@
 		android:orientation="vertical"
 		android:padding="16dip">
 
-		<TextView
-			android:id="@+id/scope_title"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dip"
-			android:textSize="12dip"
-			android:textColor="#888"
-			android:text="Scope"/>
 
-		<LinearLayout
+		<TableLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-			android:baselineAligned="false">
-			<LinearLayout
-				android:id="@+id/scope1"
-				android:layout_width="0dip"
+			android:stretchColumns="0">
+			<TextView
+				android:id="@+id/scope_title"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:orientation="vertical">
+				android:layout_marginBottom="8dip"
+				android:text="@string/name_and_identity"
+				android:textColor="#888"
+				android:textSize="12dip"/>
 
+			<TableRow>
+				<TextView
+					android:layout_column="1"
+					android:textColor="#000"
+					android:textSize="12dip"
+					android:textStyle="bold"
+					android:minWidth="60dip"
+					android:gravity="center"
+					android:text="@string/selfie"/>
+				<TextView
+					android:textColor="#000"
+					android:textSize="12dip"
+					android:textStyle="bold"
+					android:minWidth="60dip"
+					android:gravity="center"
+					android:text="@string/translation"/>
+			</TableRow>
+			<LinearLayout
+				android:orientation="vertical">
 				<CheckBox
 					android:id="@+id/scope_personal_details"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:singleLine="true"
+					android:checked="true"
+					android:maxLines="1"
 					android:ellipsize="end"
-					android:text="personal_details"/>
-
+					android:text="@string/personal_details"/>
+				<CheckBox
+					android:id="@+id/scope_native_names"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="24dip"
+					android:layout_marginStart="24dip"
+					android:maxLines="1"
+					android:ellipsize="end"
+					android:text="@string/native_names"/>
+			</LinearLayout>
+			<TableRow>
 				<CheckBox
 					android:id="@+id/scope_passport"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
+					android:checked="true"
+					android:maxLines="1"
 					android:ellipsize="end"
-					android:text="passport"/>
-
+					android:text="@string/passport"/>
+				<CheckBox
+					android:id="@+id/scope_passport_selfie"
+					android:layout_gravity="center"/>
+				<CheckBox
+					android:id="@+id/scope_passport_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
+			<TableRow>
 				<CheckBox
 					android:id="@+id/scope_driver_license"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
+					android:checked="true"
+					android:maxLines="1"
 					android:ellipsize="end"
-					android:text="driver_license"/>
-
+					android:text="@string/driver_license"/>
+				<CheckBox
+					android:id="@+id/scope_driver_license_selfie"
+					android:layout_gravity="center"/>
+				<CheckBox
+					android:id="@+id/scope_driver_license_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
+			<TableRow>
 				<CheckBox
 					android:id="@+id/scope_identity_card"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
-					android:ellipsize="end"
-					android:text="identity_card"/>
-
-				<CheckBox
-					android:id="@+id/scope_id_document"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
-					android:ellipsize="end"
 					android:checked="true"
-					android:text="id_document"/>
-
-				<CheckBox
-					android:id="@+id/scope_id_selfie"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
+					android:maxLines="1"
 					android:ellipsize="end"
-					android:checked="true"
-					android:text="id_selfie"/>
+					android:text="@string/identity_card"/>
+				<CheckBox
+					android:id="@+id/scope_identity_card_selfie"
+					android:layout_gravity="center"/>
+				<CheckBox
+					android:id="@+id/scope_identity_card_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
+			<TableRow>
+				<CheckBox
+					android:id="@+id/scope_internal_passport"
+					android:maxLines="1"
+					android:ellipsize="end"
+					android:text="@string/internal_passport"/>
+				<CheckBox
+					android:id="@+id/scope_internal_passport_selfie"
+					android:layout_gravity="center"/>
+				<CheckBox
+					android:id="@+id/scope_internal_passport_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
 
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/scope2"
-				android:layout_width="0dip"
+			<RadioGroup
+				android:orientation="horizontal">
+				<RadioButton
+					android:id="@+id/scope_id_one_of"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginRight="8dip"
+					android:layout_marginEnd="8dip"
+					android:checked="true"
+					android:text="@string/one_of"/>
+				<RadioButton
+					android:id="@+id/scope_id_all_of"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/all_of"/>
+			</RadioGroup>
+
+
+			<TextView
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:orientation="vertical">
+				android:layout_marginBottom="8dip"
+				android:layout_marginTop="8dip"
+				android:text="@string/address"
+				android:textColor="#888"
+				android:textSize="12dip"/>
 
-				<CheckBox
-					android:id="@+id/scope_address"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
-					android:ellipsize="end"
-					android:text="address"/>
+			<TableRow>
+				<TextView
+					android:layout_column="2"
+					android:textColor="#000"
+					android:textSize="12dip"
+					android:textStyle="bold"
+					android:minWidth="60dip"
+					android:gravity="center"
+					android:text="@string/translation"/>
+			</TableRow>
 
+			<CheckBox
+				android:id="@+id/scope_address"
+				android:checked="true"
+				android:maxLines="1"
+				android:ellipsize="end"
+				android:text="@string/address"/>
+			<TableRow>
 				<CheckBox
 					android:id="@+id/scope_utility_bill"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
+					android:checked="true"
+					android:layout_span="2"
+					android:maxLines="1"
 					android:ellipsize="end"
-					android:text="utility_bill"/>
-
+					android:text="@string/utility_bill"/>
+				<CheckBox
+					android:id="@+id/scope_utility_bill_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
+			<TableRow>
 				<CheckBox
 					android:id="@+id/scope_bank_statement"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
+					android:checked="true"
+					android:layout_span="2"
+					android:maxLines="1"
 					android:ellipsize="end"
-					android:text="bank_statement"/>
-
+					android:text="@string/bank_statement"/>
+				<CheckBox
+					android:id="@+id/scope_bank_statement_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
+			<TableRow>
 				<CheckBox
 					android:id="@+id/scope_rental_agreement"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
-					android:ellipsize="end"
-					android:text="rental_agreement"/>
-
-				<CheckBox
-					android:id="@+id/scope_address_document"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
-					android:ellipsize="end"
 					android:checked="true"
-					android:text="address_document"/>
-
-				<CheckBox
-					android:id="@+id/scope_phone"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
+					android:layout_span="2"
+					android:maxLines="1"
 					android:ellipsize="end"
-					android:checked="true"
-					android:text="phone_number"/>
-
+					android:text="@string/rental_agreement"/>
 				<CheckBox
-					android:id="@+id/scope_email"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:singleLine="true"
+					android:id="@+id/scope_rental_agreement_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
+			<TableRow>
+				<CheckBox
+					android:id="@+id/scope_passport_registration"
+					android:layout_span="2"
+					android:maxLines="1"
 					android:ellipsize="end"
-					android:checked="true"
-					android:text="email"/>
+					android:text="@string/passport_registration"/>
+				<CheckBox
+					android:id="@+id/scope_passport_registration_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
+			<TableRow>
+				<CheckBox
+					android:id="@+id/scope_temporary_registration"
+					android:layout_span="2"
+					android:maxLines="1"
+					android:ellipsize="end"
+					android:text="@string/temporary_registration"/>
+				<CheckBox
+					android:id="@+id/scope_temporary_registration_translation"
+					android:layout_gravity="center"/>
+			</TableRow>
 
-			</LinearLayout>
+			<RadioGroup
+				android:orientation="horizontal">
+				<RadioButton
+					android:id="@+id/scope_address_one_of"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginRight="8dip"
+					android:layout_marginEnd="8dip"
+					android:checked="true"
+					android:text="@string/one_of"/>
+				<RadioButton
+					android:id="@+id/scope_address_all_of"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/all_of"/>
+			</RadioGroup>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dip"
+				android:layout_marginTop="8dip"
+				android:text="@string/contacts"
+				android:textColor="#888"
+				android:textSize="12dip"/>
+
+			<CheckBox
+				android:id="@+id/scope_phone"
+				android:checked="true"
+				android:maxLines="1"
+				android:ellipsize="end"
+				android:text="@string/phone_number"/>
+			<CheckBox
+				android:id="@+id/scope_email"
+				android:checked="true"
+				android:maxLines="1"
+				android:ellipsize="end"
+				android:text="@string/email"/>
+
+		</TableLayout>
+
+		<LinearLayout
+			android:id="@+id/scope_one_of_container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:baselineAligned="false"
+			android:orientation="horizontal">
 		</LinearLayout>
 
 		<RelativeLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content">
+
 			<TextView
 				android:id="@+id/button_style_title"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="16dip"
 				android:layout_marginBottom="8dip"
-				android:textSize="12dip"
+				android:layout_marginTop="16dip"
+				android:text="@string/button_style"
 				android:textColor="#888"
-				android:text="@string/button_style"/>
+				android:textSize="12dip"/>
 
 			<ImageView
 				android:id="@+id/straight_corner_icon"
 				android:layout_width="16dip"
 				android:layout_height="16dip"
+				android:layout_alignParentLeft="true"
+				android:layout_alignParentStart="true"
 				android:layout_below="@+id/button_style_title"
 				android:layout_marginTop="8dip"
-				android:layout_alignParentLeft="true"
 				android:src="@drawable/ic_corner_straight"/>
+
 			<ImageView
 				android:id="@+id/round_corner_icon"
 				android:layout_width="16dip"
 				android:layout_height="16dip"
+				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				android:layout_below="@+id/button_style_title"
 				android:layout_marginTop="8dip"
-				android:layout_alignParentRight="true"
 				android:src="@drawable/ic_corner_round"/>
 
 			<android.support.v7.widget.AppCompatSeekBar
 				android:id="@+id/corner_roundness_slider"
 				android:layout_width="match_parent"
 				android:layout_height="32dip"
-				android:layout_toRightOf="@+id/straight_corner_icon"
-				android:layout_toLeftOf="@+id/round_corner_icon"
+				android:layout_below="@+id/button_style_title"
 				android:layout_marginLeft="8dip"
 				android:layout_marginRight="8dip"
-				android:layout_below="@+id/button_style_title"
+				android:layout_toLeftOf="@+id/round_corner_icon"
+				android:layout_toRightOf="@+id/straight_corner_icon"
+				android:layout_toStartOf="@+id/round_corner_icon"
+				android:layout_toEndOf="@+id/straight_corner_icon"
 				android:max="1000"
 				android:progress="300"/>
 		</RelativeLayout>
@@ -202,8 +326,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
-			android:layout_marginTop="18dip"
-			android:layout_marginBottom="16dip"/>
+			android:layout_marginBottom="16dip"
+			android:layout_marginTop="18dip"/>
 
 	</LinearLayout>
 

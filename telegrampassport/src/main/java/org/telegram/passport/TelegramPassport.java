@@ -20,7 +20,6 @@ import org.json.JSONArray;
 
 import java.security.KeyFactory;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.List;
 
 /**
  * A collection of utility methods and constants to use with Telegram Passport.
@@ -37,58 +36,6 @@ public class TelegramPassport{
 	 */
 	public static final int RESULT_ERROR=Activity.RESULT_FIRST_USER;
 
-	/**
-	 * Value for {@link AuthRequest#scope}: request personal details
-	 */
-	public static final String SCOPE_PERSONAL_DETAILS="personal_details";
-	/**
-	 * Value for {@link AuthRequest#scope}: request personal details and passport as one of identity documents
-	 */
-	public static final String SCOPE_PASSPORT="passport";
-	/**
-	 * Value for {@link AuthRequest#scope}: request personal details and driver license as one of identity documents
-	 */
-	public static final String SCOPE_DRIVER_LICENSE="driver_license";
-	/**
-	 * Value for {@link AuthRequest#scope}: request personal details and ID card as one of identity documents
-	 */
-	public static final String SCOPE_IDENTITY_CARD="identity_card";
-	/**
-	 * Value for {@link AuthRequest#scope}: request personal details and any identity document. Same as [{@link #SCOPE_PASSPORT}, {@link #SCOPE_DRIVER_LICENSE}, {@link #SCOPE_IDENTITY_CARD}]
-	 */
-	public static final String SCOPE_ID_DOCUMENT="id_document";
-	/**
-	 * Value for {@link AuthRequest#scope}: request a selfie with identity document
-	 */
-	public static final String SCOPE_ID_SELFIE="id_selfie";
-	/**
-	 * Value for {@link AuthRequest#scope}: request residential address
-	 */
-	public static final String SCOPE_ADDRESS="address";
-	/**
-	 * Value for {@link AuthRequest#scope}: request residential address and utility bill as one of proofs of address
-	 */
-	public static final String SCOPE_UTILITY_BILL="utility_bill";
-	/**
-	 * Value for {@link AuthRequest#scope}: request residential address and bank statement as one of proofs of address
-	 */
-	public static final String SCOPE_BANK_STATEMENT="bank_statement";
-	/**
-	 * Value for {@link AuthRequest#scope}: request residential address and rental agreement as one of proofs of address
-	 */
-	public static final String SCOPE_RENTAL_AGREEMENT="rental_agreement";
-	/**
-	 * Value for {@link AuthRequest#scope}: request residential address and any proof of address. Same as [{@link #SCOPE_UTILITY_BILL}, {@link #SCOPE_BANK_STATEMENT}, {@link #SCOPE_RENTAL_AGREEMENT}]
-	 */
-	public static final String SCOPE_ADDRESS_DOCUMENT="address_document";
-	/**
-	 * Value for {@link AuthRequest#scope}: request phone number
-	 */
-	public static final String SCOPE_PHONE_NUMBER="phone_number";
-	/**
-	 * Value for {@link AuthRequest#scope}: request email address
-	 */
-	public static final String SCOPE_EMAIL="email";
 
 	/**
 	 * Start the authorization flow for Telegram Passport. If Telegram app is installed, this opens it.
@@ -117,12 +64,10 @@ public class TelegramPassport{
 		performSanityCheck(params);
 		Intent intent=new Intent(ACTION_AUTHORIZE);
 		intent.putExtra("bot_id", params.botID);
-		JSONArray scope=new JSONArray();
-		for(String s:params.scope)
-			scope.put(s);
-		intent.putExtra("scope", scope.toString());
+		intent.putExtra("scope", params.scope.toJSON().toString());
 		intent.putExtra("public_key", params.publicKey);
-		intent.putExtra("payload", params.payload);
+		intent.putExtra("payload", "nonce"); // this is needed for the older versions so it passes all the checks to get the "app outdated" error from the server
+		intent.putExtra("nonce", params.nonce);
 		return intent;
 	}
 
@@ -175,8 +120,13 @@ public class TelegramPassport{
 			throw new IllegalArgumentException("botID must be >= 0");
 		if(params.scope==null)
 			throw new IllegalArgumentException("scope must not be null");
-		if(params.scope.isEmpty())
+		if(params.scope.data==null || params.scope.data.isEmpty())
 			throw new IllegalArgumentException("scope must not be empty");
+		try{
+			params.scope.validate();
+		}catch(ScopeValidationException x){
+			throw new IllegalArgumentException("scope is invalid", x);
+		}
 		if(params.publicKey==null)
 			throw new IllegalArgumentException("publicKey must not be null");
 		try{
@@ -185,8 +135,8 @@ public class TelegramPassport{
 		}catch(Exception x){
 			throw new IllegalArgumentException("publicKey has invalid format", x);
 		}
-		if(TextUtils.isEmpty(params.payload))
-			throw new IllegalArgumentException("payload must not be empty");
+		if(TextUtils.isEmpty(params.nonce))
+			throw new IllegalArgumentException("nonce must not be empty");
 	}
 
 	/**
@@ -202,21 +152,8 @@ public class TelegramPassport{
 		/**
 		 * List of the names of fields you want to request.
 		 * Required.
-		 * @see #SCOPE_PERSONAL_DETAILS
-		 * @see #SCOPE_PASSPORT
-		 * @see #SCOPE_DRIVER_LICENSE
-		 * @see #SCOPE_IDENTITY_CARD
-		 * @see #SCOPE_ID_DOCUMENT
-		 * @see #SCOPE_ID_SELFIE
-		 * @see #SCOPE_ADDRESS
-		 * @see #SCOPE_UTILITY_BILL
-		 * @see #SCOPE_BANK_STATEMENT
-		 * @see #SCOPE_RENTAL_AGREEMENT
-		 * @see #SCOPE_ADDRESS_DOCUMENT
-		 * @see #SCOPE_PHONE_NUMBER
-		 * @see #SCOPE_EMAIL
 		 */
-		public List<String> scope;
+		public PassportScope scope;
 
 		/**
 		 * The public key of the bot.
@@ -228,6 +165,6 @@ public class TelegramPassport{
 		 * An arbitrary string that is passed to the bot server.
 		 * Required.
 		 */
-		public String payload;
+		public String nonce;
 	}
 }

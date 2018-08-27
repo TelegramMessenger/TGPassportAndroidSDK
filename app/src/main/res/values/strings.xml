@@ -5,4 +5,24 @@
 	<string name="login_canceled">Login canceled</string>
 	<string name="button_style">Button Style</string>
 	<string name="login_successful">Logged in successfully</string>
+	<string name="name_and_identity">Name &amp; Identity</string>
+	<string name="address">Address</string>
+	<string name="selfie">Selfie</string>
+	<string name="translation">Translation</string>
+	<string name="personal_details">Personal details</string>
+	<string name="native_names">Include name in the original language</string>
+	<string name="passport">Passport</string>
+	<string name="driver_license">Driver License</string>
+	<string name="identity_card">Identity Card</string>
+	<string name="internal_passport">Internal Passport</string>
+	<string name="one_of">One of these</string>
+	<string name="all_of">All of these</string>
+	<string name="utility_bill">Utility Bill</string>
+	<string name="bank_statement">Bank Statement</string>
+	<string name="rental_agreement">Rental Agreement</string>
+	<string name="passport_registration">Registration in Internal Passport</string>
+	<string name="temporary_registration">Temporary Registration</string>
+	<string name="contacts">Contacts</string>
+	<string name="email">Email</string>
+	<string name="phone_number">Phone Number</string>
 </resources>
