@@ -4,7 +4,7 @@
 Telegram Passport SDK is available from the Maven repository.
 Add this line to the dependencies section in your build.gradle:
 
-    compile 'org.telegram:passport:1.0'
+    compile 'org.telegram:passport:1.1'
 and sync your project.
 #### Add as a module
 Download the library, unzip it and copy the library project to the root of your project directory (the one with settings.gradle and gradle.properties). Then, make the following changes to your Gradle scripts.
