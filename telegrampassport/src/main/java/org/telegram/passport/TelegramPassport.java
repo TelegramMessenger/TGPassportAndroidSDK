@@ -147,7 +147,7 @@ public class TelegramPassport{
 		 * Bot ID. This is the number at the beginning of the bot token.
 		 * Required.
 		 */
-		public int botID;
+		public long botID;
 
 		/**
 		 * List of the names of fields you want to request.
