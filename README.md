@@ -1,4 +1,4 @@
-## Installing
+include ':app', ':telegrampassport'## Installing
 #### Install from Maven
 
 Telegram Passport SDK is available from the Maven repository.
